@@ -177,7 +177,7 @@ pascal OSErr ofxSpeechRecognizer::handleSpeechDone(const AppleEvent *theAEevt, A
     Size                len;
     
     //-- Check status of the speech recognizer
-    errorStatus = AEGetParamPtr(theAEevt, keySRSpeechStatus, typeShortInteger, &actualType, (Ptr)&recStatus, sizeof(errorStatus), &actualSize);
+    errorStatus = AEGetParamPtr(theAEevt, keySRSpeechStatus, cShortInteger, &actualType, (Ptr)&recStatus, sizeof(errorStatus), &actualSize);
     
     //-- Get the recognition result object from the recognizer
     if(!errorStatus && !recStatus)
